@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setIcon(R.drawable.ic_launcher);
         setTitle("간단한 계산기");
 
-        edit1 = findViewById(R.id.Edit1);   // 에디트 텍스트
+        edit1 = findViewById(R.id.Edit1);   // 변수에 에디트 텍스트 위젯대입
         edit2 = findViewById(R.id.Edit2);
 
         btnAdd = findViewById(R.id.BtnAdd);
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         textResult = findViewById(R.id.TextResult);
 
+        // 버튼을 클릭할 때 동작하는 클래스 정의
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
