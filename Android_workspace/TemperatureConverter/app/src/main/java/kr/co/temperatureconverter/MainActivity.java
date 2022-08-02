@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,15 +24,38 @@ public class MainActivity extends AppCompatActivity {
         setTitle("온도변환 앱");
     }
 
-    public void onClicked(View view){
+    public void onClicked(View view) {
+        switch (view.getId()) {
+            case R.id.btn:
+                RadioButton celsiusButtn = findViewById(R.id.rBtn1);
+                RadioButton fahrenheitButton = findViewById(R.id.rBtn2);
 
+                if (text.getText().length() == 0) {
+                    Toast.makeText(getApplicationContext(), "값을 입력하세요.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                float inputValue = Float.parseFloat(text.getText().toString());
+                if(celsiusButtn.isChecked()){
+                    text.setText(String.valueOf(convertFahrenheitToCelsius(inputValue)));
+                    celsiusButtn.setChecked(false);
+                    fahrenheitButton.setChecked(true);
+                }
+                else{
+                    text.setText(String.valueOf(convertCelsiusToFahrenheit(inputValue)));
+                    fahrenheitButton.setChecked(false);
+                    celsiusButtn.setChecked(true);
+                }
+                break;
+        }
     }
-    public float convertCelsiusToFahrenheit(float celsius){
 
-        return 0.0F;
+    public float convertCelsiusToFahrenheit(float celsius) {
+
+        return ((celsius * 9) / 5) + 32;
     }
-    public float convertFahrenheitToCelsius(float fahrenheit){
 
-        return 0.0F;
+    public float convertFahrenheitToCelsius(float fahrenheit) {
+
+        return ((fahrenheit - 32) * 5 / 9);
     }
 }
