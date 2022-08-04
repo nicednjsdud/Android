@@ -38,6 +38,7 @@ class MyView extends View {
         paint.setColor(Color.RED);
         canvas.drawArc(new RectF(30, 600, 330, 1100), 360, 1000, true, paint);
 
+        // 선
         paint.setColor(Color.YELLOW);
         paint.setStrokeWidth(10);
         float[] pts = {30, 1250, 300, 1350, 300, 1350, 60, 1450, 60, 1450, 360, 1500};
