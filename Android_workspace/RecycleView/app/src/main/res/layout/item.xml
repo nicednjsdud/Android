@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="200dp"
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+    android:padding="5dp">
+
+    <!-- 하나의 항목을 이미지와 텍스트 뷰로 표시됨 -->
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView"
+        android:src="@drawable/friend"/>
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:background="#ffff00"
+        android:gravity="center"
+        android:id="@+id/info_textView"/>
+
+</LinearLayout>
