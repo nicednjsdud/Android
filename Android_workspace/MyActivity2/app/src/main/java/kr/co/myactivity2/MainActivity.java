@@ -28,12 +28,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent;
                 if (rdoSecond.isChecked() == true) {
+
+                    // 인텐트 객체에 실행하고 싶은 액티비티 클래스 이름 지정함
                     intent = new Intent(getApplicationContext(), SecondActivity.class);
                 }
                 else {
                     intent = new Intent(getApplicationContext(),ThirdAcitivity.class);
                 }
 
+                // intent 객체에 기술된 액티비티들 시작함.
                 startActivity(intent);
             }
         });
