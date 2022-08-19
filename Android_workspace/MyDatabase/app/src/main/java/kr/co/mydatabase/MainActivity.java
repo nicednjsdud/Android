@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         edit_result = findViewById(R.id.textView);
     }
 
+
     public void insert(View target){
         String name = edit_name.getText().toString();
         String tel = edit_tel.getText().toString();
