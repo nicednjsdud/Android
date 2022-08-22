@@ -1,0 +1,47 @@
+// 코틀린에서 변수 선언 사용하는 키워드 두가지
+
+/*
+
+    1. var 변수 선언하기
+        1) 선언과 동시에 초기화를 해줘야 함.
+        2) 언제든지 변경 가능한 변수를 만들때 사용 (mutable)
+ */
+
+// 타입 추론에 의해서 자동으로 형식이 지정되는 경우
+var BobYes = 100            // 타입 지정하지 않음.
+println(BobYes)
+
+BobYes = 200
+println(BobYes)
+
+//var BobYes02      // Err
+
+/*
+    2. val 변수 선언하기
+        1) 한번 초기화하면 더이상 변경할 수 없는 변수 만들때 사용
+        2) immutable , assign-once, read-only
+ */
+
+val BOB_YES = 101           // 타입 지정하지 않음
+println(BOB_YES)
+
+//BOB_YES = 200             //Err  val connot be reassigned
+
+val BOB_2022 = "정원영"
+println(BOB_2022)
+
+/*
+    3. 문자열 템플릿
+    $
+    ${}
+ */
+val price = 3000
+val tax = 300
+
+val originalPrice = "원래 가격은 " + price + " 입니다."
+val originalPrice2 = "원래 가격은 $price 입니다."
+println(originalPrice)
+println(originalPrice2)
+
+val totalPrice = "총 가격은 ${price + tax} 입니다."
+println(totalPrice)
