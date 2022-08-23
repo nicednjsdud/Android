@@ -1,0 +1,76 @@
+/*
+       1. null
+            1) 상태를 모름. 존재하지 않음
+            2) 0과는 다름.
+            3) null을 대상으로 연산을 할 수 없음.
+                - null + 3 = null
+                null을 대상으로 비교연산은 가능
+ */
+
+// var myName: String       // Err 초기화를 해주지 않음.
+// var myName2: String = null   // Err non-null type String에 null을 넣어 에러
+
+/*
+        2. NullSafety (null로 부터 안전해짐) :
+        - 코틀린 가장 큰 특징중 하나임.
+        1) val/var 변수명 : 자료형 = 값
+            - null을 값으로 할당 할수 없음.
+
+        3. Null을 표현하는 방법
+            0) 세이프 콜 연산자
+                - ?
+            1) val/var 변수명 : 자료형? = 겂
+                - null은 값으로 할당 가능
+                    -val number : int? = null 가능
+            2) 자료형 뒤에 ? 기호를 붙여 명시적으로 null이 올수 있음을 알려줌.
+                - Int?
+                    = nullable (null가능)
+
+ */
+var myName: String? = null
+var number: Int? = null
+println(number)
+
+// val number2: Int = null  // Err null can not be a value of a non-null type
+
+val num1: Int = 2 + 5
+val num2: Int = 10
+val num3: Int = num1 + num2
+println(num3) // 17
+
+var myName2: String? = null
+myName2 = "BOB2"
+// myName2이 null이 될수도 있기 때문에 코틀린 컴파일러가 개발자에게 알려줌
+// 코드가 복잡해지면 실수로 null이 들어갈 가능성이 높아짐.
+// println(myName2.reversed()) // Err
+println(myName2?.reversed()) // 2BOB
+
+/*
+
+    4. 확장 연산자
+        - !!
+        - !!로 null 아님을 개발자가 보장 할 수 있음.
+        - 절대 null이 아님을  보증하는 연산자
+        - '이게 null이 가능한 자료형이긴 한데, 절대 null 아니니깐 걱정마'
+ */
+
+val num5: Int? = 2 + 5
+val num6: Int? = 10
+val num7: Int? = num5!! + num6!!
+println(num3)       // 17
+
+// null은 비교연산 가능
+
+if(null ==5){
+    println("same")
+}
+else{
+    println("not Same")         // O
+}
+
+if(null == null){
+    println("same")             // O
+}
+else{
+    println("not smae")
+}
