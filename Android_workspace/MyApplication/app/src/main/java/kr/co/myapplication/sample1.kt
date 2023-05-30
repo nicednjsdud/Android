@@ -157,6 +157,7 @@ fun ignoreNulls(str : String?){
 
     val email : String? = "bob.gmail.com"
     email?.let{
-        
+        println("my email is ${email}")
     }
 }
+
