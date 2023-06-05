@@ -24,6 +24,15 @@ fun main() {
     println(b.pizzaIsGreat())
     println(extendsString("bob",27))
     println(calculateGrade(97))
+
+    val lamda = {number : Double ->
+        number == 4.3213
+    }
+
+    println(invokeLamda(lamda))
+    println(invokeLamda({it > 3.22}))
+
+
 }
 
 // 확장 함수
@@ -57,3 +66,5 @@ val calculateGrade : (Int) -> String = {
 fun invokeLamda(lamda : (Double) -> Boolean) : Boolean {
     return lamda(5.2343)
 }
+
+// pojo
